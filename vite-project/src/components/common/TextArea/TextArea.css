@@ -1,0 +1,26 @@
+.textarea-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.textarea-input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.textarea-input:focus {
+  outline: none;
+  border-color: var(--color-brand);
+  box-shadow: 0 0 0 3px var(--color-brand-soft);
+}
+
+.textarea-input:disabled {
+  background: var(--color-bg);
+  cursor: not-allowed;
+}

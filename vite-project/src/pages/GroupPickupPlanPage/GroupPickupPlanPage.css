@@ -1,0 +1,23 @@
+.group-pickup-plan-page {
+  padding-top: 8px;
+}
+
+.group-pickup-plan-page__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.group-pickup-plan-page__section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 860px) {
+  .group-pickup-plan-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

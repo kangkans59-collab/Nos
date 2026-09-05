@@ -1,0 +1,92 @@
+.navbar {
+  height: var(--header-height);
+  background: var(--color-navbar-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navbar__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.navbar__brand-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--color-brand);
+}
+
+.navbar__brand-tagline {
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.navbar__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  padding: 6px 4px;
+}
+
+.navbar__link:hover {
+  color: var(--color-brand);
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar__role-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-brand);
+  background: var(--color-brand-soft);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.navbar__cart,
+.navbar__avatar {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  font-size: 1.1rem;
+}
+
+.navbar__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ecd9ef;
+  color: #6a2f7a;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 860px) {
+  .navbar__links {
+    display: none;
+  }
+}

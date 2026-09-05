@@ -1,0 +1,22 @@
+.hero-brand {
+  text-align: center;
+  background: var(--color-brand-soft);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  margin-bottom: 40px;
+}
+
+.hero-brand__title {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-brand);
+}
+
+.hero-brand__subtitle {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}

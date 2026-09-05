@@ -1,0 +1,50 @@
+.produce-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-card);
+}
+
+.produce-card__image {
+  height: 110px;
+  background: var(--color-brand-soft);
+  display: flex;
+  align-items: flex-start;
+  padding: 12px;
+}
+
+.produce-card__body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.produce-card__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.produce-card__seller {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.produce-card__price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-brand);
+  margin-top: 2px;
+}
+
+.produce-card__stock {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.produce-card__body .btn {
+  margin-top: 8px;
+}

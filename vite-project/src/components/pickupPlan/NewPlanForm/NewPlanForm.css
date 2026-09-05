@@ -1,0 +1,62 @@
+.new-plan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 88px;
+}
+
+.new-plan-form__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.new-plan-form__summary {
+  background: var(--color-success-bg);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.new-plan-form__summary-line {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-success-text);
+}
+
+.new-plan-form__reservations {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.new-plan-form__reservations li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.new-plan-form__totals {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 8px;
+}
+
+.new-plan-form__empty {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.new-plan-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
