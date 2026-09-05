@@ -1,0 +1,20 @@
+.empty-state {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--color-text-muted);
+}
+
+.empty-state__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.empty-state__message {
+  font-size: 0.9rem;
+}
+
+.empty-state__action {
+  margin-top: 16px;
+}

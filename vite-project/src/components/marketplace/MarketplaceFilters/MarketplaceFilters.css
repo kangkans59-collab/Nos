@@ -1,0 +1,12 @@
+.marketplace-filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 720px) {
+  .marketplace-filters {
+    grid-template-columns: 1fr;
+  }
+}

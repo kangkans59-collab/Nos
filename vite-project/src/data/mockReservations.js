@@ -1,0 +1,73 @@
+import { addHours } from '../utils/format.js'
+
+const now = new Date()
+
+// Reservations already "ready for pickup", waiting to be grouped into a
+// coordinated pickup plan (see GroupPickupPlanPage).
+export const initialReservations = [
+  {
+    id: 'RSV-3391',
+    produceId: 'prod-1',
+    produceName: 'Heirloom Tomatoes',
+    buyerName: 'Ramesh K.',
+    sellerName: 'Green Valley Farms',
+    quantity: 18,
+    unit: 'kg',
+    zone: 'Sector 12 Community Hub',
+    pickupWindow: 'Today, 4:00 PM – 6:00 PM',
+    status: 'ready-for-pickup',
+    createdAt: addHours(now, -1).toISOString(),
+  },
+  {
+    id: 'RSV-3388',
+    produceId: 'prod-1',
+    produceName: 'Heirloom Tomatoes',
+    buyerName: 'Fatima S.',
+    sellerName: 'Green Valley Farms',
+    quantity: 22,
+    unit: 'kg',
+    zone: 'Sector 12 Community Hub',
+    pickupWindow: 'Today, 4:00 PM – 6:00 PM',
+    status: 'ready-for-pickup',
+    createdAt: addHours(now, -2).toISOString(),
+  },
+  {
+    id: 'RSV-3405',
+    produceId: 'prod-4',
+    produceName: 'Green Chillies',
+    buyerName: 'Arjun P.',
+    sellerName: 'Sunrise Organics',
+    quantity: 9,
+    unit: 'kg',
+    zone: 'Sector 12 Community Hub',
+    pickupWindow: 'Today, 4:30 PM – 6:00 PM',
+    status: 'ready-for-pickup',
+    createdAt: addHours(now, -1).toISOString(),
+  },
+  {
+    id: 'RSV-3410',
+    produceId: 'prod-5',
+    produceName: 'Bananas',
+    buyerName: 'Meena T.',
+    sellerName: 'Sunrise Organics',
+    quantity: 15,
+    unit: 'dozen',
+    zone: 'Lakeview Market',
+    pickupWindow: 'Tomorrow, 9:00–11:00 AM',
+    status: 'ready-for-pickup',
+    createdAt: addHours(now, -3).toISOString(),
+  },
+  {
+    id: 'RSV-3399',
+    produceId: 'prod-7',
+    produceName: 'Mangoes',
+    buyerName: 'Vikram D.',
+    sellerName: 'Hill Crest Farms',
+    quantity: 30,
+    unit: 'kg',
+    zone: 'Sector 9 Depot',
+    pickupWindow: 'Today, 5:00–7:00 PM',
+    status: 'ready-for-pickup',
+    createdAt: addHours(now, -4).toISOString(),
+  },
+]

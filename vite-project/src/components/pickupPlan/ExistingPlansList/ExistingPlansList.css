@@ -1,0 +1,43 @@
+.existing-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.existing-plan-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.existing-plan-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.existing-plan-card__header h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.existing-plan-card__meta {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.existing-plan-card__link {
+  margin-top: 8px;
+  background: none;
+  border: none;
+  color: var(--color-brand);
+  font-weight: 700;
+  font-size: 0.82rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}

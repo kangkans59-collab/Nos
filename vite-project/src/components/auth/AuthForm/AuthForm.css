@@ -1,0 +1,32 @@
+.auth-form {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid var(--color-border);
+}
+
+.auth-form__title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-brand);
+  margin-bottom: 20px;
+}
+
+.auth-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.auth-form__footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--color-brand);
+}
+
+.auth-form__footer a {
+  font-weight: 700;
+  text-decoration: underline;
+}

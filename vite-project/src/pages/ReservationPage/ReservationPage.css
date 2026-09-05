@@ -1,0 +1,20 @@
+.reservation-page__back {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+.reservation-page__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .reservation-page__grid {
+    grid-template-columns: 1fr;
+  }
+}

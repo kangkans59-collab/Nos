@@ -1,0 +1,15 @@
+.landing-page {
+  padding-top: 24px;
+}
+
+.landing-page__roles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 560px) {
+  .landing-page__roles {
+    grid-template-columns: 1fr;
+  }
+}

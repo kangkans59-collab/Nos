@@ -1,0 +1,20 @@
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.page-header__title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.page-header__subtitle {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
