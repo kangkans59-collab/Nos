@@ -37,6 +37,9 @@ function LoginPage() {
       const result = await response.json(); // Parse the JSON response
       console.log('Success:', result);
       
+      if (response.ok){
+        localStorage.setItem('token',data.token);
+      }
     } catch (error) {
       console.error('Error during the request:', error);
     }

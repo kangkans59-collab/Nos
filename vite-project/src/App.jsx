@@ -11,6 +11,7 @@ import TransactionHistoryPage from './pages/TransactionHistoryPage/TransactionHi
 import GroupPickupPlanPage from './pages/GroupPickupPlanPage/GroupPickupPlanPage.jsx'
 import { AppProvider } from './context/AppContext.jsx'
 import './App.css'
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -18,17 +19,22 @@ function App() {
       <div className="app-shell">
         <Navbar />
         <main className="app-main">
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/marketplace" element={<MarketplacePage />} />
-            <Route path="/list-produce" element={<ListProducePage />} />
-            <Route path="/my-listings" element={<MyListingsPage />} />
-            <Route path="/reserve/:produceId" element={<ReservationPage />} />
-            <Route path="/transactions" element={<TransactionHistoryPage />} />
-            <Route path="/pickup-plan" element={<GroupPickupPlanPage />} />
-          </Routes>
+<Routes>
+  {/* Public Routes */}
+  <Route path="/" element={<LandingPage />} />
+  <Route path="/login" element={<LoginPage />} />
+  <Route path="/signup" element={<SignupPage />} />
+
+  {/* Protected Routes Wrapper */}
+  <Route element={<ProtectedRoute />}>
+    <Route path="/marketplace" element={<MarketplacePage />} />
+    <Route path="/list-produce" element={<ListProducePage />} />
+    <Route path="/my-listings" element={<MyListingsPage />} />
+    <Route path="/reserve/:produceId" element={<ReservationPage />} />
+    <Route path="/transactions" element={<TransactionHistoryPage />} />
+    <Route path="/pickup-plan" element={<GroupPickupPlanPage />} />
+  </Route>
+</Routes>
         </main>
       </div>
     </AppProvider>
