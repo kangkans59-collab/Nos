@@ -190,7 +190,7 @@ function reducer(state, action) {
         reservations: [newReservation, ...state.reservations],
       }
 
-    case 'CREATE_PICKUP_PLAN': 
+     case 'CREATE_PICKUP_PLAN': 
       const { newPlan, updatedReservations } = action.payload
       return {
         ...state,
@@ -199,6 +199,9 @@ function reducer(state, action) {
           updatedReservations.find(ur => ur.id === r.id) || r
         ),
       }
+
+    case 'ADD_TRANSACTION':
+      return { ...state, transactions: [action.payload, ...state.transactions] }
 
     default:
       return state
@@ -279,9 +282,24 @@ export function AppProvider({ children }) {
     }
   }, [])
 
+  const logTransaction = useCallback(async (payload) => {
+    try {
+      const response = await fetch('/api/transactions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+      const savedTransaction = await response.json()
+
+      dispatch({ type: 'ADD_TRANSACTION', payload: savedTransaction })
+    } catch (error) {
+      console.error("Failed to log transaction:", error)
+    }
+  }, [])
+
   const value = useMemo(
-    () => ({ ...state, setRole, addProduce, reserveProduce, createPickupPlan }),
-    [state, setRole, addProduce, reserveProduce, createPickupPlan]
+    () => ({ ...state, setRole, addProduce, reserveProduce, createPickupPlan, logTransaction }),
+    [state, setRole, addProduce, reserveProduce, createPickupPlan, logTransaction]
   )
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>
