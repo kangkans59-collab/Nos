@@ -10,7 +10,7 @@ router.get('/api/marketplace-data', async (req, res) => {
   try {
     console.log("Fetching marketplace data from database...");
     
-    const [produce, reservations, pickupPlans] = await Promise.all([
+    
     const [produce, reservations, pickupplans, transactions] = await Promise.all([
       produces.find({ status: 'active' }).sort({ expiryAt: 1 }),
       Reservation.find().sort({ createdAt: -1 }),
