@@ -17,6 +17,9 @@ import marketplaceRoutes from './routes/marketplace.js';
 import produceRoutes from './routes/produce.js';
 import reservationRoutes from './routes/reservation.js';
 import pickupPlanRoutes from './routes/pick_up.js';
+import transactionRoutes from './routes/transaction.js';   // add near the other route imports
+...
+app.use(transactionRoutes);                                  // add near the other app.use(...Routes) lines
 
 app.use(express.json());
 
