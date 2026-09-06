@@ -1,5 +1,5 @@
 import express from 'express';
-import produces from '../models/pick_plan.js';
+import produces from '../models/produce.js';
 import Reservation from '../models/reservation.js';
 import PickupPlan from '../models/pick_plan.js';
 
@@ -7,7 +7,9 @@ const router = express.Router();
 
 router.get('/api/marketplace-data', async (req, res) => {
   try {
-    const [produce, reservations, pickupplans] = await Promise.all([
+    console.log("Fetching marketplace data from database...");
+    
+    const [produce, reservations, pickupPlans] = await Promise.all([
       produces.find({ status: 'active' }).sort({ expiryAt: 1 }),
       Reservation.find().sort({ createdAt: -1 }),
       PickupPlan.find().sort({ createdAt: -1 })
@@ -16,12 +18,12 @@ router.get('/api/marketplace-data', async (req, res) => {
     res.status(200).json({
       produce,
       reservations,
-      pickupplans,
+      pickupPlans,
       transactions: []
     });
   } catch (error) {
-    console.error("Fetch Marketplace Data Error:", error);
-    res.status(500).json({ error: "Failed to fetch marketplace data." });
+    console.error("CRASH in marketplace-data route:", error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 

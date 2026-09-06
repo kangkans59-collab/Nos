@@ -9,6 +9,10 @@ import cors from "cors";
 
 const app = express();
 
+app.use(cors({
+  origin: 'http://localhost:5173' // Only allow your React app
+}));
+
 import marketplaceRoutes from './routes/marketplace.js';
 import produceRoutes from './routes/produce.js';
 import reservationRoutes from './routes/reservation.js';
@@ -28,9 +32,7 @@ mongoose.connect("mongodb://localhost:27017/userInfo")
 
 
 
-app.use(cors({
-  origin: 'http://localhost:5173' // Only allow your React app
-}));
+
 
 
 
