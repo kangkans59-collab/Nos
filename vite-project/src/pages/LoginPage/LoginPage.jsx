@@ -14,6 +14,35 @@ function LoginPage() {
   function handleSubmit(e) {
     e.preventDefault()
     // Mock authentication only — no backend wired up yet.
+    async function sendData() {
+    const url = 'http://localhost:5000/api/sellers/login';
+    const data = {
+      username: username,
+      password: password
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST', // Specify the request method
+        headers: {
+          'Content-Type': 'application/json', // Tell the server we are sending JSON
+        },
+        body: JSON.stringify(data) // Convert the JavaScript object to a JSON string
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const result = await response.json(); // Parse the JSON response
+      console.log('Success:', result);
+      
+    } catch (error) {
+      console.error('Error during the request:', error);
+    }
+  }
+
+  sendData();
     navigate('/marketplace')
   }
 

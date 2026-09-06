@@ -30,13 +30,13 @@ authRouter.post("/register", async (req, res) => {
 
 authRouter.post("/login", async (req, res) => {
 
-    const { email, password } = req.body;
+    const { username, password } = req.body;
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username });
 
     if (!user) {
         return res.status(401).json({
-            message: "Invalid email or password"
+            message: "Invalid username or password"
         });
     }
 
@@ -55,7 +55,7 @@ authRouter.post("/login", async (req, res) => {
     const token = jwt.sign(
         {
             userId: user._id,
-            email: user.email
+            username: user.username
         },
         process.env.JWT_SECRET,
         {
