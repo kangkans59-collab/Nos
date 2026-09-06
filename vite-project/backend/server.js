@@ -1,8 +1,25 @@
 import "dotenv/config";
 import express from "express";
+
 import sellerRouter from "./routes/sellerRoutes.js";
 import authRouter from "./routes/authRoutes.js";
+import authenticate from "./middleware/authMiddleware.js";
 import mongoose from "mongoose";
+import cors from "cors";
+
+const app = express();
+
+import marketplaceRoutes from './routes/marketplace.js';
+import produceRoutes from './routes/produce.js';
+import reservationRoutes from './routes/reservation.js';
+import pickupPlanRoutes from './routes/pick_up.js';
+
+app.use(express.json());
+
+app.use(marketplaceRoutes);
+app.use(produceRoutes);
+app.use(reservationRoutes);
+app.use(pickupPlanRoutes);
 
 mongoose.connect("mongodb://localhost:27017/userInfo")
     .then(() => console.log("MongoDB connected"))
@@ -10,12 +27,17 @@ mongoose.connect("mongodb://localhost:27017/userInfo")
 
 
 
-const app = express();
-app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173' // Only allow your React app
+}));
+
+
 
 console.log("JWT SECRET:", process.env.JWT_SECRET);
 
-app.use("/seller", sellerRouter);
-app.use("/auth",authRouter);
+app.use("/api/sellers",authRouter);
+sellerRouter.use(authenticate);
+app.use("/api/sellers", sellerRouter);
 
-app.listen(6000,()=>{console.log("Server is running at port 6000");})
+app.listen(5000,()=>{console.log("Server is running at port 5000");});

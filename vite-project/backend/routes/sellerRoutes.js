@@ -1,10 +1,10 @@
 import express from "express";
 import Seller from "../models/Seller.js";
-import authenticate from "../middleware/authMiddleware.js";
+// import authenticate from "../middleware/authMiddleware.js";
 
 const sellerRouter = express.Router();
 
-sellerRouter.use(authenticate);
+// sellerRouter.use(authenticate);
 
 
 sellerRouter.post("/",async(req,res)=>{
