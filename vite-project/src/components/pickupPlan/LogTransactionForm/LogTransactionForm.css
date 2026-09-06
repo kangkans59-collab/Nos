@@ -1,1 +1,31 @@
+.log-transaction-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 520px;
+}
 
+.log-transaction-form__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.log-transaction-form__hint {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.log-transaction-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.log-transaction-form__row {
+  display: flex;
+  gap: 14px;
+}
+
+.log-transaction-form__row > * {
+  flex: 1;
+}
