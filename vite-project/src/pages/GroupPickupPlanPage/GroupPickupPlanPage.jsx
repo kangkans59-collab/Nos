@@ -4,7 +4,9 @@ import PageHeader from '../../components/layout/PageHeader/PageHeader.jsx'
 import UngroupedReservationsList from '../../components/pickupPlan/UngroupedReservationsList/UngroupedReservationsList.jsx'
 import NewPlanForm from '../../components/pickupPlan/NewPlanForm/NewPlanForm.jsx'
 import ExistingPlansList from '../../components/pickupPlan/ExistingPlansList/ExistingPlansList.jsx'
+import LogTransactionForm from '../../components/pickupPlan/LogTransactionForm/LogTransactionForm.jsx'
 import { useApp } from '../../context/AppContext.jsx'
+import { CURRENT_SELLER } from '../../data/constants.js'
 import './GroupPickupPlanPage.css'
 
 function GroupPickupPlanPage() {
@@ -25,6 +27,20 @@ function GroupPickupPlanPage() {
   function handleCreatePlan({ location, window, notes }) {
     createPickupPlan({ reservationIds: selectedIds, location, window, notes })
     setSelectedIds([])
+    <section className="group-pickup-plan-page__existing">
+          <h3 className="group-pickup-plan-page__section-title">Existing Pickup Plans</h3>
+          <ExistingPlansList plans={pickupPlans} />
+        </section>
+
+        {role === 'seller' && (
+          <section className="group-pickup-plan-page__existing">
+            <LogTransactionForm sellerName={CURRENT_SELLER.name} onLogTransaction={logTransaction} />
+          </section>
+        )}
+      </PageContainer>
+    </div>
+  )
+}
   }
 
   return (
